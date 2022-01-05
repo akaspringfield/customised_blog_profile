@@ -1,0 +1,31 @@
+{% extends 'portfolio/page.html' %}
+
+{% block content %}
+
+<h4>Cake Blogs</h4>
+<div class="container">
+    <h9>
+        Cake section has {{ blogs.count }} blog{{ blogs.count|pluralize }}
+    </h9>
+    <br>
+    <br>
+    <div>
+        {% for x in blogs %}
+
+        <a href="{% url 'blog:detail' x.id %}">
+            <h5>
+                {{ x.title }}
+            </h5>
+        </a>
+        <h20>
+                {{ x.date|date:'M d Y' |lower }}
+        </h20>
+        <h15><p>{{ x.description | striptags | truncatechars:200}}</p></h15>
+            
+        <br>
+
+                {% endfor %}
+            </div>
+        {% endblock %}
+        <hr>
+</div>

@@ -1,0 +1,15 @@
+{% extends 'portfolio/page.html' %}
+
+{% block content %}
+
+<div class="container">
+    <h9>
+        <h5>{{ blog.title }}</h5>
+        <h20>--{{ blog.date|date:'F jS Y' }}--</h20>
+        <h15><p>{{ blog.description | striptags }}</p></h15>
+    </h9>
+</div>
+{% endblock %}
+
+
+

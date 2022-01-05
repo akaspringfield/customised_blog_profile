@@ -1,0 +1,45 @@
+    {% extends 'portfolio/page.html' %}
+
+    {% load static %}
+    
+    {% block content %}
+
+    <div class="row justify-content-center my-3">
+        <div class="col-5">
+        <img src="{% static 'portfolio/mambally.jpg' %}" class="img-fluid">
+        </div>
+    </div>
+
+    <div class="row justify-content-center mb-3">
+        <div class="col-md-9 text-center">
+            <h3 id="" class="font-weight-bold">Mambally Bakes Thalassery - Indias First Cake Made Hear</h3>
+        </div>
+    </div>
+
+    <br>
+    <h3 class="row justify-content-center my-3">History Of Cakes</h3>
+    <hr>
+    <div class="row">
+        {% for x in projects %}
+        <div class="col-lg-4 col-md-6">
+            
+            {% if x.url %}
+            <a href="{{ x.url }}">
+                <img src="{{ x.image.url }}" class="img-fluid mb-2">
+            </a>
+            {% else %}
+            
+            <img src="{{ x.image.url }}" class="img-fluid mb-2">
+            {% endif %}
+
+            <h3>{{ x.title }}</h3>
+            <p>{{ x.description }}</p> 
+        </div>
+
+    {% endfor %}
+
+    </div>
+
+    {% endblock %}
+
+    http://historyofthalassery.blogspot.com/2014/03/bakers-street.html
